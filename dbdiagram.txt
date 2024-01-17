@@ -1,0 +1,86 @@
+Table Departments {
+  id Int
+  name String
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+Table DepartmentRoles {
+  id Int
+  departmentId Int
+  name String
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+Table Users {
+  id Int
+  departmentId Int
+  departmentRoleId Int
+  name String
+  email String
+  username String
+  password String
+  role "[Admin, Member, CEO, Executive, HOD, BUCC]"
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+Table Workspaces {
+  id Int
+  name String
+  ownerId Int
+  craetedAt DateTime
+  updatedAt DateTime
+}
+
+Table Projects {
+  id Int
+  workspaceId Int
+  name String
+  craetedAt DateTime
+  updatedAt DateTime
+}
+
+Table Tasks {
+  id Int
+  projectId Int
+  name String
+  AnyoneCanChangeStatus Boolean
+  craetedAt DateTime
+  updatedAt DateTime
+}
+
+Table SubTasks {
+  id Int
+  taskId Int
+  name String
+  craetedAt DateTime
+  updatedAt DateTime
+}
+
+Table WorkspaceMembers {
+  id Int
+  workspaceId Int
+  userId Int
+  role "[Guest, Member, Manager]"
+  craetedAt DateTime
+  updatedAt DateTime
+}
+
+Table ProjectMembers {
+  id Int
+  ProjectId Int
+  userId Int
+  role "[Member, Manager]"
+  craetedAt DateTime
+  updatedAt DateTime
+}
+
+Table TaskStatusChangePermissions {
+  id Int
+  taskId Int
+  managerId Int
+  craetedAt DateTime
+  updatedAt DateTime
+}
